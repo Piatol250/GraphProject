@@ -87,7 +87,7 @@ Graph* readGraphFromFileRLExample(const char* filename) {
     int numVertices;
     fscanf(file, "%d", &numVertices);
 
-    Graph* graph = createGraph(numVertices+1);
+    Graph* graph = createGraph(numVertices);
 
     while (fscanf(file, "%d %d", &from, &to) == 2)
     {
