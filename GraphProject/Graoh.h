@@ -19,3 +19,5 @@ typedef struct graph {
     int V;
     EdgeList* edges;
 } Graph;
+
+#endif /* GRAPH_H */
