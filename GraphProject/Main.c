@@ -4,12 +4,9 @@
 
 int main() 
 {
-    Graph G; 
+    Graph* G; 
 
-    FILE* file = fopen("graph.txt", "r");
-    if (file == NULL) {
-        printf("Error opening file!\n");
-        return;
-    }
+    G = readGraphFromFileTutorialExample("Graph.txt");
+    printInDegree(G);
     return 0;
 }
