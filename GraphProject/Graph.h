@@ -21,6 +21,7 @@ typedef struct graph {
 } Graph;
 
 Graph* readGraphFromFileTutorialExample(const char* filename);
+Graph* readGraphFromFileRLExample(const char* filename);
 Graph* createGraph(int V);
 void addEdge(Graph* graph, int from_vertex, int to_vertex, int weight);
 void destroyGraph(Graph* graph);

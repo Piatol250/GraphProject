@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Graph.h"
+#include <windows.h>
 
 Graph* createGraph(int V) {
     Graph* graph = (Graph*)malloc(sizeof(Graph));
@@ -65,6 +66,33 @@ Graph* readGraphFromFileTutorialExample(const char* filename) {
     {
         addEdge(graph, from, to, weight);
         
+    }
+
+    fclose(file);
+
+    return graph;
+}
+
+Graph* readGraphFromFileRLExample(const char* filename) {
+    FILE* file = fopen(filename, "r");
+    int from = NULL;
+    int to = NULL;
+    int weight = 0;
+
+    if (file == NULL) {
+        printf("Failed to open the file.\n");
+        return NULL;
+    }
+
+    int numVertices;
+    fscanf(file, "%d", &numVertices);
+
+    Graph* graph = createGraph(numVertices+1);
+
+    while (fscanf(file, "%d %d", &from, &to) == 2)
+    {
+        addEdge(graph, from, to, weight);
+
     }
 
     fclose(file);
